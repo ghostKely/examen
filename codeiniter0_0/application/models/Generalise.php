@@ -1,20 +1,33 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Generalise extends CI_Controller {
-    //fonction check if exist mamerina nom de colonne + +
+class Generalise extends CI_Model{
+    public function getAllcategory() {
+        $categories = array();
+        $this->db->select('nom');
+        $categories = $this->get('categorie');
+        return $categories;
+    }
 
-//     public function save($valeur, $colonne, $table) {
-//         $request = 'insert into '.$table.' values(';
+    public function getObjectbycategorie($idcategory) {
+        $this->db->select('idobjet');
+        $this->db->where('idcategorie',$idcategory);
+        $idobjects = $this->db->get('objetcategorie');
 
-//         for ($i=0; $i<sizeof($valeur); $i++) {
-//             $request = $request + $valeur[$i].', ';
-//             if ($i == sizeof($valeur)-1) { $request = $request + $valeur[$i];}
-//         }
+        $objects = $this->db->get('objet');
+        $allobjectsofcategory = array();
+        for($i=0; $i<sizeof($idobjects); $i++) {
+            for ($j=0; $j<sizeof($objects); $j++) {
+                $oneid = $objects['idobjet'];
+                if ($idobjects == $oneid) {
+                    $allobjectsofcategory[] = $objects;
+                break;
+                }
+            }
+        }
 
-//         $request = $request.');';
-//     }
-// }
-    
+        return $allobjectsofcategory;
+    }
+
 }
 ?>

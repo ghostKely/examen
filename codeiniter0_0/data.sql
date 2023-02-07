@@ -3,21 +3,23 @@ use takalo
 
 create table user(
     iduser int not null primary key auto_increment,
-    nom varchar(20),
-    prenom varchar(20),
-    email varchar(20),
-    mdp varchar(20),
+    nom varchar(250),
+    prenom varchar(250),
+    email varchar(250),
+    mdp varchar(250),
+    dtn datetime,
+    genre varchar,
     isadmin int
 );
 
 create table categorie(
     idcategorie int not null primary key auto_increment,
-    nom varchar(20)
+    nom varchar(250)
 );
 
 create table objet(
     idobjet int not null primary key auto_increment,
-    nom varchar(20),
+    nom varchar(250),
     prix double,
     iduser int,
     foreign key (iduser) references user(iduser)
@@ -33,10 +35,10 @@ create table objetcategorie(
 
 create table photo(
     idphoto int not null primary key auto_increment,
-    path varchar(100)
+    path varchar(250)
 );
 
-insert into user values(null,"Balita","Tsiory","balitatsiory@gmail.com","bonjour",1);
+insert into user values(null,"ADMIN","admin","admin@gmail.com","qwerty",1);
 insert into user values(null,"Ony","Tsiory","tsiory@gmail.com","veloma",0);
 
 insert into categorie values(null,'vetement');

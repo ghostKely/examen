@@ -46,19 +46,19 @@ insert into categorie values(null,'music');
 insert into categorie values(null,'utilitaire');
 insert into categorie values(null,'outil');
 
-create table objet(null,'bague');
-create table objet(null,'pc');
-create table objet(null,'ipods');
-create table objet(null,'telephone');
-create table objet(null,'chemise');
-create table objet(null,'tourne vis');
-create table objet(null,'cahier');
-create table objet(null,'tronsoneuse');
-create table objet(null,'ecouteur');
-create table objet(null,'pantalon');
-create table objet(null,'asus');
-create table objet(null,'stylo');
-create table objet(null,'rein');
+create table objet values(null,'bague',1000,1);
+create table objet values(null,'pc',1000,1);
+create table objet values(null,'ipods',1000,1);
+create table objet values(null,'telephone',1000,1);
+create table objet values(null,'chemise',1000,1);
+create table objet values(null,'tourne vis',1000,1);
+create table objet values(null,'cahier',1000,1);
+create table objet values(null,'tronsoneuse',1000,1);
+create table objet values(null,'ecouteur',1000,1);
+create table objet values(null,'pantalon',1000,1);
+create table objet values(null,'asus',1000,1);
+create table objet values(null,'stylo',1000,1);
+create table objet values(null,'rein',1000,1);
 
 
 

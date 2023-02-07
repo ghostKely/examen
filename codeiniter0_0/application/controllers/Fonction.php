@@ -1,32 +1,35 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('No direct script access allowed');	//protection fichier
+require_once (APPPATH . 'controllers/Mysession.php');
 
-class Fonction extends CI_Controller {
-    public function login($email, $mdp) {
-        $query = $this->db->query('select nom, mail, mdp from client');  //alaina daoly le cient anayty database
-        $verif = false;                                                 //boolean verif 
-        $tab = array();                                                 //array asina anle donnees                                         
-
-        foreach ($query->result_array() as $row) {
-            $tab['nom'] = $row['nom'];                                  //alaina le nom
-            $tab['email'] = $row['email'];                              //alaina le email
-            $tab['mdp'] = $row['mdp'];                                  //alaina le mdp
-        }
-
-        for ($i=0; $i<sizeof($tab); $i++) {
-            if ($email == $tab[$i]['email'] && $mdp == $tab[$i]['mdp']) {//raha mitovy le mdp sy ny email
-                $verif = true;                                           //atao marina 
-            }
-        }
-
-        return $verif;
-    }
-
-    public function select()
+class Fonction extends Mysession{
+    public function index ()
     {
-        # code...
+        $this->load->view('templates/template');
+        
     }
+    public function acceuil()
+    {
+       
+    }
+    public function categorie()
+    {
+       
+    }
+    public function decouvrir()
+    {
+       
+    }
+    public function profil()
+    {
+        $data=array();
+        $data['title']=$_SESSION['']
+        $this->load->view('templates/template',$data);
 
+    }
+    public function deconnexion()
+    {
+       
+    }
 
 }
-?>

@@ -1,6 +1,6 @@
 <?php
 	$this->load->helper('url_helper');
-?>
+    ?>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -42,10 +42,9 @@
         </div>
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
-                <li><a href="./index.html">Acceuil</a></li>
+                <li><a href="<?php echo site_url('fonction/index');  ?>">Acceuil</a></li>
                 <li><a href="#">Categories</a></li>
-                <li><a href="#">Decouvrir</a></li>
-                <li><a href="<?php echo site_url('fonction/ajouterobjet');  ?>">AjouterObjet</a></li>
+                <li><a href="<?php echo site_url('fonction/statistique');  ?>">Statistique</a></li>
                 <!-- <li class="dropdown"><a href="#">Pages</a>
                     <ul class="dropdown__menu">
                         <li><a href="./categories-grid.html">Categories Grid</a></li>
@@ -56,7 +55,8 @@
                     </ul>
                 </li> -->
                 <li><a href="<?php echo site_url('fonction/profil');  ?>">Profil</a></li>
-                <li><a href="./contact.html">Deconnexion</a></li>
+                <li><a href="<?php echo site_url('fonction/demande');  ?>">Demandes</a></li>
+                <li><a href="<?php echo site_url('fonction/deconnexion');  ?>">Deconnexion</a></li>
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
@@ -107,36 +107,40 @@
                     <div class="col-lg-8 col-md-10 order-md-2 order-3">
                         <nav class="header__menu">
                             <ul>
-                                <li><a href="./index.html">Acceuil</a></li>
-                                <li><a href="#">Categories</a>
+                            <li><a href="<?php echo site_url('fonction/index');  ?>">Acceuil</a></li>
+                                <li><a href="<?php echo site_url('fonction/categorie');  ?>">Categories</a>
                                     <div class="header__megamenu__wrapper">
                                         <div class="header__megamenu">
-                                            <div class="header__megamenu__item">
+                                            
                                                 <!-- boucle categorie -->
-                                                <div class="header__megamenu__item--pic set-bg"
-                                                    data-setbg="img/megamenu/p-1.jpg">
-                                                    
-                                                </div>
-                                                <div class="header__megamenu__item--text">
-                                                    <h5><a href="#">How to Make a Milkshake With Any Ice Cream ...</a>
-                                                    </h5>
-                                                </div>
-                                            </div>
+                                                <!-- <?php //foreach ($allcategorie as $categorie) { ?> -->
+                                                <?php for ($i=0; $i < 4; $i++) { ?>
+                                                        <div class="header__megamenu__item">
+                                                            <div class="header__megamenu__item--pic set-bg"
+                                                                data-setbg="<?php //echo $allcategorie[$i]['img']; ?>">
+                                                                
+                                                            </div>
+                                                            <div class="header__megamenu__item--text">
+                                                                <h5><a href="<?php echo site_url('fonction/categorie/'.$allcategorie[$i]['idcategorie']);  ?>"><?php echo $allcategorie[$i]['nom']; ?></a>
+                                                                </h5>
+                                                            </div>
+                                                        </div>
+                                                <?php } ?>
+                                            
 <!-- -- -->
                                             <div class="header__megamenu__item">
                                                 <div class="header__megamenu__item--pic set-bg"
                                                     data-setbg="img/megamenu/p-5.jpg">
                                                 </div>
                                                 <div class="header__megamenu__item--text">
-                                                    <h5><a href="#">Divers...</a>
+                                                    <h5><a href="<?php echo site_url('fonction/categorie');  ?>">Divers...</a>
                                                     </h5>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </li>
-                                <li><a href="#">Decouvrir</a></li>
-                <li><a href="<?php echo site_url('fonction/ajouterobjet');  ?>">AjouterObjet</a></li>
+                                <li><a href="<?php echo site_url('fonction/statistique');  ?>">Statistique</a></li>
 
                                 <!-- <li class="dropdown"><a href="#">Pages</a>
                                     <ul class="dropdown__menu">
@@ -148,7 +152,8 @@
                                     </ul>
                                 </li> -->
                                 <li><a href="<?php echo site_url('fonction/profil');  ?>">Profil</a></li>
-                                <li><a href="./contact.html">Deconnexion</a></li>
+                                <li><a href="<?php echo site_url('fonction/demande');  ?>">Demandes</a></li>
+                                <li><a href="<?php echo site_url('fonction/deconnexion');  ?>">Deconnexion</a></li>
                             </ul>
                         </nav>
                     </div>

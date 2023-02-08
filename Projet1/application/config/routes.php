@@ -54,3 +54,4 @@ $route['default_controller'] = 'login';
 	 //==  localhost/index.php/welcome/index
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+$route['upload']='Upload';

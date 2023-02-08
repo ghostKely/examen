@@ -40,9 +40,11 @@
                         <div class="footer__logo">
                             <a href="#"><img src="img/logo.png" alt=""></a>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                            ut<br /> labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus
-                            commodo viverra<br /> maecenas accumsan lacus vel facilisis. </p>
+                        <h4><p>
+                            ETU 1903 RAZAFINDRAKOTO Balita Tsiory Sarobidy<br/>
+                            ETU 1886 RATEFIARINTSOA Ny Fanirina Precieux <br />
+                            ETU 1835 RAKOTONIAINA TOLOTRA BERJAYA VANIOH</p>
+                            </h4>
                         <div class="footer__social">
                             <i class="fa fa-facebook"></i>
                             <i class="fa fa-twitter"></i>

@@ -55,6 +55,42 @@ class Login extends CI_Controller {	///Code Initeur ///class tjr MAJ
 		redirect('fonction');
 
 	}
+	public function receiveinscription()
+	{
+		$this->load->model('Modelbdd');
+		$email = $this->input->post('email');
+		$mdp = $this->input->post('mdp');
+		$nom = $this->input->post('nom');
+		$prenom = $this->input->post('prenom');
+		$dtn=$this->input->post('dtn');
+		$genre=$this->input->post('genre');
+		$admin=$this->input->post('admin');
+		$tab=array(
+			'iduser' => null,
+			'email' => $email,
+			'mdp' => $mdp,
+			'nom' => $nom,
+			'prenom' => $prenom,
+			'genre' => $genre,
+			'dtn' => $dtn,
+			'isadmin' => $admin,
+		);
+		$this->Modelbdd->sinscrire($tab);
+		$id=$this->Modelbdd->getidbyusername($nom);
+		$tab=array(
+			'email' => $email,
+			'iduser' => $id,
+			'nom' => $nom,
+
+		); 
+		$this->load->library('session');
+
+		$this->session->set_userdata('logged_in',$tab);
+		redirect('fonction/index');
+
+	}
+
+
 
 	public function receive()
 	{
@@ -70,6 +106,8 @@ class Login extends CI_Controller {	///Code Initeur ///class tjr MAJ
 				$tab=array(
 					'email' => $row['email'],
 					'iduser' => $row['iduser'],
+					'username' => $row['nom'],
+
 				); 
 				echo $row['email'];
 				$this->session->set_userdata('logged_in',$tab);

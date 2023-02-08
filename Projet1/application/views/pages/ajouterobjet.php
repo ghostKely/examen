@@ -7,9 +7,7 @@
   </div>
   <div class="icon_wrapper">
 
-  </div>
-  <form action="#" method="get" id="contact_form">
-    <div class="nom">
+  </div>    <div class="nom">
       <label for="nom">Nom :</label>
       <input type="text" name="nom" id="nom" required>
     </div>
@@ -17,26 +15,28 @@
       <label for="prix">Prix</label>
       <input type="text" name="prix" id="prix" required>
     </div>
+
     <div class="categorie">
       <select name="categorie" id="categorie" required>
-        <?php foreach ($allcategorie as $categorie) {
-        }?>
-        <option disabled hidden selected>Vetement</option>
-        <option>Mobilier</option>
-        <option>Technologie</option>
-        <option>Divers</option>
+          <?php foreach ($allcategorie as $categorie) { ?>
+            <option value="<?php echo $categorie['nom']; ?>" selected><?php echo $categorie['nom'] ;?></option>
+          <?php } ?>
       </select>
+    </div>
+    <div class="description">
+      <label for="description">Description :</label>
+      <input type="text" name="description" id="description" required><br>
     </div>
     <div class="photo">
       <label for="photo">Image :</label>
-      <input type="hidden" name="MAX_FILE_SIZE" value="100000">
-      <input type="file" name="photo" id="photo" required>
+            <?php echo form_open_multipart('fonction/do_upload');?> 
+          
+          <form action = "" method = "">
+            <input type = "file" name = "00:35 08/02/2023userfile" size = "20" /> 
+            <br /><br /> 
+            <input type = "submit" value = "upload" /> 
+          </form>    
     </div><br>
-    <div class="submit">
-      <input type="submit" value="Validez" id="form_button" />
-    </div>
-  </form>
   </div>
-  </form>
 </div>
 </section>

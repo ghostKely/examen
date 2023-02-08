@@ -11,7 +11,7 @@
     <body>
         <div id="ajout">
             <div id="titre"><h3>Page d'inscription</h3></div>
-            <form action="#" method="get">
+            <form action="<?php echo site_url('login/receiveinscription'); ?>" method="post">
                 <div class="mb-3">
                     <label for="nom" class="form-label">Nom</label>
                     <input type="text" class="form-control" id="nom" name="nom" required>
@@ -24,20 +24,26 @@
 
                 <div class="mb-3">
                     <label for="dateNaissance" class="form-label">Date de naissance</label>
-                    <input type="date" class="form-control" id="dateNaissance" name="dateNaissance" required>
+                    <input type="date" class="form-control" id="dtn" name="dtn" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="mdp" class="form-label">Mot de passe</label>
+                    <input type="password" class="form-control" id="mdp" name="mdp" required>
                 </div>
 
-                <div class="mb-3">
-                    <label for="genre" class="form-label">Genre</label>
-                    <select id="genre" class="form-select" name="genre">
-                            <option value="m">Homme</option>
-                            <option value="m">Femme</option>
-                    </select>
-                </div>
 
                 <div class="mb-3">
                     <label for="Adresse" class="form-label">Adresse Email</label>
-                    <input type="text" class="form-control" id="adresse" name="adresse" required>
+                    <input type="text" class="form-control" id="email" name="email" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="Genre" class="form-label">Genre</label>
+                    <select name="genre">
+                        <option value="homme">Homme</option>
+                        <option value="femme">Femme</option>
+                    </select>
                 </div>
 
                 <div class="mb-3">
